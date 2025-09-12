@@ -130,7 +130,19 @@ Save/Quit
 
 Overthewire Banditgame:
 
+Level 0:First of all to enter the game you need to enter the game the through the port that is instructed.By running the command ssh bandit1@bandit.labs.overthewire.org -p 2220 you enter the server.Use the username and password given to login to the user.By running ls you find a file known as readme.You read its contents using cat , which gives you the password to the next level.
 
+Level 1:Upon entering the level you run the ls command and find a file known as "-".You run cat./- which gives you the password for the next level. "./" was used due to the file begining with a hyphen as the cat command recognises "-" as part of the command.
+
+Level 2:Upon entering the level you run the ls command and find a file called "--spaces in this filename--".By running cat-- "--spaces in this filename--" this seperates the hypen from the command which the cat command often gets confused by.This gives you the password to the next level.
+
+Level 3:In this level you run the command ls to find a directory called inhere.Entering the directory using cd inhere, you run ls to see no file appearing.By running ls -a you can see hidden files.Where you see a file known as "...Hiding-from-you".Using the same trick as before, you run the command cat -- "...Hiding from you" this gives you the password to the next level.
+
+Level 4:This level is prertty identical to level 3 but when you run ls the files show up.There are multimples files listed from 1 to 10.Assuming one of the files have the password,a command is needed to identify which one.By running the command file ./* this identifies where the password resides in."File" command is used to tell you data is inside the name file."./" means in this directory.The wild card is "*" acts as "everything" so by combining it with ./ it acts as a shell globbing.This comes out to show me all the data for everything in this directory .File 7 stands out so.The password for level 5 is revealed by running cat -- "-file07".
+
+Level 5:So this level starts of similar to level 4 however instead of consisting of many files it consists of double the amount in directories.We are given the clue the that file with the password is exactly 1033 bytes of size.By using the command find . -size 1033c.This showed us the directory and file hence by running cat for this file the password was revealed.The final command used was cat maybehere07/.file2.
+
+Level 6:
 
 
 
