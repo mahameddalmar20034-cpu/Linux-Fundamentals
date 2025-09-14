@@ -142,7 +142,18 @@ Level 4:This level is prertty identical to level 3 but when you run ls the files
 
 Level 5:So this level starts of similar to level 4 however instead of consisting of many files it consists of double the amount in directories.We are given the clue the that file with the password is exactly 1033 bytes of size.By using the command find . -size 1033c.This showed us the directory and file hence by running cat for this file the password was revealed.The final command used was cat maybehere07/.file2.
 
-Level 6:
+Level 6: In this level we had to locate a specific file we were given the size , the user permission and the group permission.Using the command find / -type f -size 33c -user bandit7 -group bandit6 2> /dev/null .Using "/" I searched the entire root directory as I couldnt locate it in within the bandit6 directory.Find is very handy as it can find exact files.The command ends with "2> /dev/null" so if any errors occur we can redirect them as they serve no purpose.Once the command was run the exact ancestor  directory leading to the file appeared. A simple cat command with its ancestor directory revealed the password for the following level.
+
+Level 7: So in this level within the directory is file known as data.txt.Its a massive file with lots of words, however the pattern is that with every actual word was a password.I was told that next the word "millionth" would be the password.You could do sort -n data.txt which would put it in numerical order where you could scroll till you found the word.However the optimal method was to used the command grep "millionth" data.txt which instantly gave me the password which was next to the word millionth.
+
+Level 8: In this level we are dealing with a line which contains the password and is only repeated once.So using the code sort put them in order using them with. The command sort data.txt | uniq only shows each line once.This wasnt enough as there were many different lines.Using sort data.txt | uniq -c would should each of one line and how may times they were duplicated this gave away the password as it was the only repeated once.The best code to use would have been sort data.txt |uniq -u as this gives you the only line repeated once which was our password.
+
+Level 9:Ls showed me that the file data.txt was full of un readable jargon.So usings strings was useful how ever by itself it showed me lots of "human readable strings" so I used pipe to combine with with grep as I was told it precedes with an = sign so using strings data.txt | grep "=" it revealed the password.
+
+Level 10:For this level the data was written in base64.Using the code base64 -d data.txt it revealed the password. "-d" comes up as decode without it the file is coded into base64.
+
+Level 11: For this level the data in the file all the upper and lower case letters where shifted 13 letters.So the command tr was used to sort this out.This command revealed the password cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' .'A-Za-z' this meant all letters pretty much for lower case and upper case.N-ZA-Mn-za-m this was used to shift all these letters down to 13 in which M is the 13 letter ence  a-m and n-z.
+
 
 
 
