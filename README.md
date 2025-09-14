@@ -152,7 +152,9 @@ Level 9:Ls showed me that the file data.txt was full of un readable jargon.So us
 
 Level 10:For this level the data was written in base64.Using the code base64 -d data.txt it revealed the password. "-d" comes up as decode without it the file is coded into base64.
 
-Level 11: For this level the data in the file all the upper and lower case letters where shifted 13 letters.So the command tr was used to sort this out.This command revealed the password cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' .'A-Za-z' this meant all letters pretty much for lower case and upper case.N-ZA-Mn-za-m this was used to shift all these letters down to 13 in which M is the 13 letter ence  a-m and n-z.
+Level 11: For this level the data in the file all the upper and lower case letters where shifted 13 letters.So the command tr was used to sort this out.This command revealed the password cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' .'A-Za-z' this meant all letters pretty much for lower case and upper case.N-ZA-Mn-za-m this was used to shift all these letters down to 13 in which M is the 13 letter ence  a-m and n-z.So you basicaly start your alphabet from the 14th letter since they were all shifted hence 'N-ZA-Mn-za-m'.
+
+Level 12:
 
 
 
