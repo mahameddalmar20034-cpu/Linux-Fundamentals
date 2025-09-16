@@ -154,7 +154,9 @@ Level 10:For this level the data was written in base64.Using the code base64 -d 
 
 Level 11: For this level the data in the file all the upper and lower case letters where shifted 13 letters.So the command tr was used to sort this out.This command revealed the password cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' .'A-Za-z' this meant all letters pretty much for lower case and upper case.N-ZA-Mn-za-m this was used to shift all these letters down to 13 in which M is the 13 letter ence  a-m and n-z.So you basicaly start your alphabet from the 14th letter since they were all shifted hence 'N-ZA-Mn-za-m'.
 
-Level 12:
+Level 12: This level I was told it was hexdump of a file that had been repeatedly compressed.So first I was told to run the command mktemp -d to create a directory so that I can deal with it.So for I decoded the hex file and relocated it using xxd -r data.txt > /tmp/tmp.asdasd/data.txt2.The by using file to see the nature of the file I unzipped it.The file was of three different natures.Gzip compressed this means that to uncompress it I would have to mv data.txt data.gz and then run gunzip data.gz to decompress it.There was also bzip2 file so for this one you change it to ending .bz2 or you dont have to but it will rename it for you and it might get confusing. and the last one is tar archive.So for this you would tar -xvf data.txt where "x" means extract so needed "v" prints the name of the file being extracted without it would be done silently  and "f" for name what file to extract so all the three are used together.So these were repeated to stip the layers until the password was reached.
+
+Level 13
 
 
 
