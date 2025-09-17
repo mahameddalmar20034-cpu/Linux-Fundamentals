@@ -156,7 +156,12 @@ Level 11: For this level the data in the file all the upper and lower case lette
 
 Level 12: This level I was told it was hexdump of a file that had been repeatedly compressed.So first I was told to run the command mktemp -d to create a directory so that I can deal with it.So for I decoded the hex file and relocated it using xxd -r data.txt > /tmp/tmp.asdasd/data.txt2.The by using file to see the nature of the file I unzipped it.The file was of three different natures.Gzip compressed this means that to uncompress it I would have to mv data.txt data.gz and then run gunzip data.gz to decompress it.There was also bzip2 file so for this one you change it to ending .bz2 or you dont have to but it will rename it for you and it might get confusing. and the last one is tar archive.So for this you would tar -xvf data.txt where "x" means extract so needed "v" prints the name of the file being extracted without it would be done silently  and "f" for name what file to extract so all the three are used together.So these were repeated to stip the layers until the password was reached.
 
-Level 13
+Level 13: For this level to reach level 14 you need to log directly into it without a password.Since the ssh private key was given (safer than a password) it was used.The command was ssh -i /home/bandit13/sshkey.private bandit14@bandit.labs.overthewire.org -p 2220 bandit14@bandit.labs.overthewire.org -p 2220.
+
+Level 14: So for this level we need to obtain the password for thos curremnt level since we never used it to enter.By using cd /etc/bandit_pass the bandit14 password was located there>.Now to enter the local host I ran the command. nc localhost 30000 and placed the password retrieving the password for level 15.
+
+Level 15:
+
 
 
 
