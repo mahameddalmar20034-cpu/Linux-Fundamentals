@@ -160,7 +160,10 @@ Level 13: For this level to reach level 14 you need to log directly into it with
 
 Level 14: So for this level we need to obtain the password for thos curremnt level since we never used it to enter.By using cd /etc/bandit_pass the bandit14 password was located there>.Now to enter the local host I ran the command. nc localhost 30000 and placed the password retrieving the password for level 15.
 
-Level 15:
+Level 15:For this level we use password from our current level to login to the local host to obtain the password for the next level.However we need to obtain this using  SSL/TLS encrpyption.This is done by running the command:                      openssl s_client -connect localhost:30001 and then entering the password.This gives you the password to the next level.
+
+Level 16: So for this level we need to login to level 17 using localhost and SSL-TLS encryption but first we need to find which of the ports from 31000-32000 are open and compaitible with the encryption.By running the command  nmap -sV -p 31000-32000 localhost.This showed us which ports were open and which ones were not just repeating what we gave it which was identified by the term "echo".The port 31790 had SSl/unkown rather than SSL/echo so I knew this was the port.Then logging I ran the command penssl s_client -connect localhost:31790 -quiet as it "quiet" was used as it kept glitching after pasting the password.This gave an RSA key.I ran mktemp-d and used touch (didnt really need to) and pasted the contents into there.I also rant he command Chmod 600 key  so that the private key  protected  Then I ran ssh -i ./key  bandit17@bandit.labs.overthewire.org -p 2220 which logged me into the next level. 
+
 
 
 
