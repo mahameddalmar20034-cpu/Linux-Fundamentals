@@ -166,7 +166,9 @@ Level 16: So for this level we need to login to level 17 using localhost and SSL
 
 level 17:So the password for the next level is in a file in passwords.new.There is another file called passwords.old these files are identical but where they differ is one line which is the password for the next level.By running the command diff -u passwords.old passwords.new where "-u" tells you the different in a unified format so you can see clearly where the difference is.Once the command was ran it ran a unified couple of lines it stated -39,7 and +39,7 so the "-" meant the old file and vice versa and that the difference was on line 39  and 7 lines long for the both of them.By taking the line with the + it gave me the password to the next level.
 
-level 18:
+level 18:For this level you keep getting logged out as the bash.rc has be altered.By running  ssh bandit18@bandit.labs.overthewire.org -p 2220 ls you can perform a remote command .It showed a file called readme.Then running  ssh bandit19@bandit.labs.overthewire.org -p 2220 cat readme it revealed the password for the next level.
+
+level 19:
 
 
 
